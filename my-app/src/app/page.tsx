@@ -2,20 +2,36 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 import { client } from "./lib/client-fetch";
+import {  Image as Iimage } from "sanity";
+import { urlForImage } from '../../sanity/lib/image';
 
 interface types {
-  products: "string",
-  id: "number",
-  description: "string"
+
+  _id: number
+  products: string
+  description: string
+  price: number
+  image: Iimage,
+  category: {
+  name: string
+  }
 }
+
 
  export async function data () {
 
-  const res = await client.fetch(`*[_type == "product" ] {
-   id,
-   products,
-   description
-  }`)
+  const res = await client.fetch(`*[_type == "product"]{
+
+  _id,
+  products,
+  price,
+  image,
+  category -> {
+  name,
+  },
+description
+}
+`)
  
   return res
   
@@ -27,18 +43,20 @@ export default async function Home() {
 
  return(
 
-  <div>
+  <div className='flex justify-center'>
     {
       data1.map((item) => 
       (
         <div>
-          <h1>{item.id}</h1>
+          <Image src = {urlForImage(item.image).url()} alt = "Loading" height = {400} width = {300}/>
           <h1>{item.products}</h1>
           <p>{item.description}</p>
+          
+
         </div>
       ))
     }
   </div>
- )
+ ) 
  
 }

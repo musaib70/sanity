@@ -21,7 +21,25 @@ export default  {
         type: 'image',
         title: 'Product Image'
 
+    },
+
+    {
+        name: "price",
+        type: "number",
+        title: "Product Price"
+    },
+
+    {
+        name: "category",
+        title: "Category",
+        type: "reference",
+        to:[{
+                type: "category"
+        }]
+        
     }
+
+    
 ]    
     }  
     
