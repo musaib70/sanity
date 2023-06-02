@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import { client } from "./lib/client-fetch";
 import {  Image as Iimage } from "sanity";
 import { urlForImage } from '../../sanity/lib/image';
+import  ProductCard  from './productCard';
 
 interface types {
 
@@ -43,15 +44,14 @@ export default async function Home() {
 
  return(
 
-  <div className='flex justify-center'>
+  <div className='grid grid-cols-3 max-w-screen-lg mx-auto m-4 '>
     {
       data1.map((item) => 
       (
-        <div>
-          <Image src = {urlForImage(item.image).url()} alt = "Loading" height = {400} width = {300}/>
-          <h1>{item.products}</h1>
-          <p>{item.description}</p>
+        <div >
           
+       
+      <ProductCard item = {item}/>
 
         </div>
       ))
