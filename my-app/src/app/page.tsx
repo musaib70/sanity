@@ -8,6 +8,8 @@ import  ProductCard  from './productCard';
 import  Header  from "../app/Layout/Header";
 import Hero from "../app/hero";
 import Specialization from "../app/specialization"
+import Footer from "../app/footer";
+import  Letter  from "../app/letter";
 
 
 interface types {
@@ -50,7 +52,7 @@ export default async function Home() {
 
  return(
 
-<div className='max-w-screen-2xl mx-auto'>
+<div className='max-w-screen-xl mx-auto'>
 
   <div className=''>
 
@@ -59,6 +61,10 @@ export default async function Home() {
       <Hero/>
 
       <Specialization/>
+
+      <Letter/>
+
+      <Footer/>
      
     {
       data1.map((item) => 
