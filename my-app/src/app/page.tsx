@@ -5,6 +5,10 @@ import { client } from "./lib/client-fetch";
 import {  Image as Iimage } from "sanity";
 import { urlForImage } from '../../sanity/lib/image';
 import  ProductCard  from './productCard';
+import  Header  from "../app/Layout/Header";
+import Hero from "../app/hero";
+import Specialization from "../app/specialization"
+
 
 interface types {
 
@@ -38,24 +42,38 @@ description
   
 }
 
+
+
 export default async function Home() {
 
   const data1:types[] = await data()
 
  return(
 
-  <div className='grid grid-cols-3 max-w-screen-lg mx-auto m-4 '>
+<div className='max-w-screen-2xl mx-auto'>
+
+  <div className=''>
+
+       <Header/>
+
+      <Hero/>
+
+      <Specialization/>
+     
     {
       data1.map((item) => 
       (
-        <div >
-          
+        <div className=' '>
+
+   
        
-      <ProductCard item = {item}/>
+      {/* <ProductCard item = {item}/> */}
 
         </div>
+       
       ))
     }
+  </div>
   </div>
  ) 
  
