@@ -54,7 +54,7 @@ export default async function Home() {
 
 <div className='max-w-screen-xl mx-auto'>
 
-  <div className=''>
+
 
        <Header/>
 
@@ -62,24 +62,28 @@ export default async function Home() {
 
       <Specialization/>
 
-      <Letter/>
-
-      <Footer/>
+      
      
     {
       data1.map((item) => 
       (
-        <div className=' '>
-
-   
+        <>
+             <div className=" ">
        
-      {/* <ProductCard item = {item}/> */}
+      <ProductCard  item = {item}/>
 
         </div>
+
+        </>
        
       ))
     }
-  </div>
+
+<Letter/>
+
+<Footer/>
+
+
   </div>
  ) 
  
