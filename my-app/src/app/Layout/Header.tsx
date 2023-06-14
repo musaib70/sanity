@@ -1,16 +1,20 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image';
 import  MantineSearchBar  from "../compnonents/MantineSearchBar";
-
+import Link from 'next/link';
 import { ShoppingCart } from "lucide-react"
-
-
-
-
-
+import type { RootState } from '../store/store';
+import { useSelector, useDispatch } from 'react-redux'
+import { cartActions } from '../store/slice/cartSlice';
+import type { PayloadAction } from '@reduxjs/toolkit'
+import { counterSlice } from '../store/slice/cartSlice';
 
 
 const Header = () => {
+
+  const cartvalue = useSelector((state: RootState) => state.CounterSlice.totalQuantity)
   return (
 
 <header className=' flex bg-opacity-95 justify-between my-4 px-2 py-2 item-center  bg-white sticky top-0 '>
@@ -33,10 +37,15 @@ const Header = () => {
 </div>
 
 <div className='flex items-center'>
-<div className='flex justify-center items-center h-12 w-12 rounded-full bg-rose-100'>
+<div className='flex justify-center items-center h-12 w-12 rounded-full bg-rose-100 relative'>
+
+{/* <Link href="/store/counter/counter"> */}
   <button >
-<ShoppingCart />
+    <span className='absolute right-1 top-0 bg-red-400 text-center h-4 w-4 text-xs text-white rounded-full items-center'>{cartvalue}</span>
+<ShoppingCart /> 
 </button>
+{/* </Link>  */}
+
 </div>
 
 

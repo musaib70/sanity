@@ -1,4 +1,10 @@
 import './globals.css'
+import Providers from './store/provider'
+import  Inter  from 'next/font/google'
+
+
+
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body >
+      <Providers>
+        {/* <Header/> */}
+        <main className='px-8 md:px-28'>{children}</main></Providers>
+      </body>
     </html>
   )
 }

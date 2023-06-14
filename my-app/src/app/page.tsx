@@ -6,10 +6,13 @@ import {  Image as Iimage } from "sanity";
 import { urlForImage } from '../../sanity/lib/image';
 import  ProductCard  from './productCard';
 import  Header  from "../app/Layout/Header";
-import Hero from "../app/hero";
-import Specialization from "../app/specialization"
-import Footer from "../app/footer";
-import  Letter  from "../app/letter";
+import Hero from "./compnonents/hero";
+import Specialization from "../app/compnonents/specialization"
+import Footer from "../app/Layout/footer";
+import  Letter  from "./compnonents/letter";
+import counterView from './cart/cart';
+import { Counter } from './store/counter/counter';
+
 
 
 interface types {
