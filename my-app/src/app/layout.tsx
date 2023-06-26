@@ -1,7 +1,7 @@
 import './globals.css'
 import Providers from './store/provider'
 import  Inter  from 'next/font/google'
-
+import Header from './Layout/Header'
 
 
 
@@ -19,8 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+
       <Providers>
-        {/* <Header/> */}
+      {/* <Header/> */}
         <main className='px-8 md:px-28'>{children}</main></Providers>
       </body>
     </html>

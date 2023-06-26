@@ -65,13 +65,17 @@ export default async function Home() {
 
       <Specialization/>
 
-      
+
+      <div className=' mt-14 '>
+         <div className="max-w-screen-2xl mx-auto  ">
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-x-14  gap-y-14 ml-40">
      
     {
+            
       data1.map((item) => 
       (
         <>
-             <div className=" ">
+             <div>
        
       <ProductCard  item = {item}/>
 
@@ -80,7 +84,13 @@ export default async function Home() {
         </>
        
       ))
+
     }
+      </div>
+      </div>
+      </div>
+
+
 
 <Letter/>
 

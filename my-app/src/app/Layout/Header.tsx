@@ -26,10 +26,14 @@ const Header = () => {
 
 <div className='flex items-center gap-12 font-semibold text-lg'>
 
-<button>Female</button>
-<button>Male</button>
-<button>Kids</button>
+
+<Link href={"mycategory/female"}>Female</Link>
+<Link href={"/mycategory/male"}><button>Male</button></Link>
+<Link href={"/mycategory/kids"}><button>Kids</button></Link>
+
+<Link href={"/products"}>
 <button>All Products</button>
+</Link>
 </div>
 
 <div className='flex  items-center '>
